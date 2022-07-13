@@ -1,35 +1,35 @@
 @startuml
-WeatherForecast<|--city
-WeatherForecast<|--states
-WeatherForecast<|--countrys
-WeatherForecast<|--speacialRegions
-
-WeatherForecast : Datum
-WeatherForecast : Vorhersagelänge
-
-WeatherForecast : double temperature()
-WeatherForecast : double tem_feels_like()
-WeatherForecast : double temp_min()
-WeatherForecast : double temp_max()
-WeatherForecast : double humidity()
-WeatherForecast : double sunrise()
-WeatherForecast : double sunset()
-WeatherForecast : double wind_speed()
-WeatherForecast : int wind_deg()
-WeatherForecast : double wind_gust()
-WeatherForecast : int clouds_all()
-WeatherForecast : double visibility()
-
-city : available examples 
-states : available examples
-countrys : available examples
-speacialRegions : available examples
-
-
-class generalWeather
+class CurrentWeather
 {
-generalWeather : include seasons
-int temp()
-int rain()
++weather : List<weather>
++main : main
++visibility : double
++wind : wind
++rain : rain
++clouds + clouds
++sys : sys
+}
+
+class weather
+{
++main : string
++description : string
+}
+
+class main
+{
++temp : double
++feels_like : double
+}
+
+CurrentWeather<--weather
+CurrentWeather<--main
+
+class GeneralWeather
+{
++temperature : string
++rain : string
+
++GetInformations() : string
 }
 @enduml
