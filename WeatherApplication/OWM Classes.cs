@@ -6,9 +6,25 @@ public class CurrentWeather
     public main main {get; set;}
     public double visibility {get; set;}
     public wind wind {get; set;}
-    public rain rain {get; set;}
     public clouds clouds {get; set;}
+    public rain rain {get; set;}
     public sys sys {get; set;}
+}
+
+public class UpTo5DaysWeather
+{
+    public List<list> list {get; set;}
+}
+
+public class list
+{
+    public double dt {get; set;}
+    public main main {get; set;}
+    public weather weather {get; set;}
+    public clouds clouds {get; set;}
+    public wind wind {get; set;}
+    public double visibility {get; set;}
+    public rain rain {get; set;}
 }
 
 public class weather
@@ -30,7 +46,7 @@ public class main
 public class wind
 {
     public double speed {get; set;}
-    public int deg {get; set;}
+    public double deg {get; set;}
     public double gust {get; set;}
 }
 

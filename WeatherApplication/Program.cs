@@ -2,7 +2,7 @@
 using System.Net.Http;
 using Newtonsoft.Json;
 
-public enum TypeOfRequest {General, Current, Forecast}
+public enum TypeOfWeather {General=1, Current=2, Forecast=3}
 
 namespace WeatherApplication
 {
@@ -11,6 +11,7 @@ namespace WeatherApplication
         static void Main(string[] args)
         {
             Console.Clear();
+            /*
 
             UrlStringBuilder urlBuilder = new UrlStringBuilder();
             
@@ -25,21 +26,39 @@ namespace WeatherApplication
             CurrentWeather currentweather = JsonConvert.DeserializeObject<CurrentWeather>(json);
             Console.WriteLine(currentweather.rain._1h);
             Console.WriteLine(json);
-
-            //Console.WriteLine(currentweather.rain._1h);
+            */
+            Console.WriteLine(AskForTypeOfWeather());
             
 
         }
-    }
 
-    class GeneralWeather
-    {
-        
-    }
+        static TypeOfWeather AskForTypeOfWeather()
+        {
+            string input;            
+            
+            while (true)
+            {
+                Console.WriteLine("Type of weather information:");
+                Console.WriteLine("  1: General weather for a country");
+                Console.WriteLine("  2: Current Weather for a specific City");
+                Console.WriteLine("  3: Forecast for a specific City");
+                Console.WriteLine();
+                Console.WriteLine("Answer: ");
+                input = Console.ReadLine();
 
+                if ( input.Equals("1") || input.Equals("2") || input.Equals("3") )
+                {
+                    return (TypeOfWeather) Int32.Parse(input);
+                }
+                Console.WriteLine("Wrong Answer!");
+                Console.WriteLine();
+            }
+        }
+    }
+/*
     class UrlStringBuilder
     {
-        public TypeOfRequest typeOfRequest {get; set;} 
+        public TypeOfWeather typeOfRequest {get; set;} 
         public readonly string appid = "81465b514607845ee21f943fc0f53acd";       
         public string city {get; set;}
         public string units {get; set;}
@@ -84,17 +103,7 @@ namespace WeatherApplication
 
         public void AskForParameters()
         {
-            string input;
-
-            Console.WriteLine("Type of weather information:");
-            Console.WriteLine("  1: General weather for a country");
-            Console.WriteLine("  2: Current Weather for a specific City");
-            Console.WriteLine("  3: Forecast for a specific City");
-            Console.WriteLine();
-            Console.WriteLine("Answer: ");
             
-            
-            input = Console.ReadLine();
             switch (input)
             {
                 case "1":
@@ -119,4 +128,5 @@ namespace WeatherApplication
         private void AskFor
 
     }
+    */
 }
