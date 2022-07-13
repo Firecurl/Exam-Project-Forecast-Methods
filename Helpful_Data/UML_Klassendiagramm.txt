@@ -1,0 +1,35 @@
+@startuml
+WeatherForecast<|--city
+WeatherForecast<|--states
+WeatherForecast<|--countrys
+WeatherForecast<|--speacialRegions
+
+WeatherForecast : Datum
+WeatherForecast : Vorhersagelänge
+
+WeatherForecast : double temperature()
+WeatherForecast : double tem_feels_like()
+WeatherForecast : double temp_min()
+WeatherForecast : double temp_max()
+WeatherForecast : double humidity()
+WeatherForecast : double sunrise()
+WeatherForecast : double sunset()
+WeatherForecast : double wind_speed()
+WeatherForecast : int wind_deg()
+WeatherForecast : double wind_gust()
+WeatherForecast : int clouds_all()
+WeatherForecast : double visibility()
+
+city : available examples 
+states : available examples
+countrys : available examples
+speacialRegions : available examples
+
+
+class generalWeather
+{
+generalWeather : include seasons
+int temp()
+int rain()
+}
+@enduml
