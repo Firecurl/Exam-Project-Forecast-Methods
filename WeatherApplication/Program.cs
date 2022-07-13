@@ -32,9 +32,15 @@ namespace WeatherApplication
         }
     }
 
+    class GeneralWeather
+    {
+        
+    }
+
     class UrlStringBuilder
     {
-        public int typeOfRequest {get; set;}        
+        public TypeOfRequest typeOfRequest {get; set;} 
+        public readonly string appid = "81465b514607845ee21f943fc0f53acd";       
         public string city {get; set;}
         public string units {get; set;}
 
@@ -52,35 +58,65 @@ namespace WeatherApplication
             }
         }
 
+        public string BuildUrlString()
+        {
+            string url = "https://api.openweathermap.org/data/2.5/";
+
+            switch (typeOfRequest)
+            {
+                case TypeOfRequest.General:
+                    
+                    break;
+                case TypeOfRequest.Current:
+                    url += "weather?";
+                    break;
+                case TypeOfRequest.Forecast:
+                    url += "forecast?";
+                    break;
+            }
+
+            url += "q=" + city + "&";
+            url += "appid" + appid + "&";
+            url += "units" + units;
+
+            return url;
+        }
+
         public void AskForParameters()
         {
+            string input;
+
             Console.WriteLine("Type of weather information:");
             Console.WriteLine("  1: General weather for a country");
             Console.WriteLine("  2: Current Weather for a specific City");
             Console.WriteLine("  3: Forecast for a specific City");
             Console.WriteLine();
             Console.WriteLine("Answer: ");
-            string input;
+            
             
             input = Console.ReadLine();
-
             switch (input)
             {
                 case "1":
-                    this.typeOfRequest = (int)TypeOfRequest.General;
+                    this.typeOfRequest = TypeOfRequest.General;
                     break;
                 case "2":
-                    this.typeOfRequest = (int)TypeOfRequest.General;
+                    this.typeOfRequest = TypeOfRequest.Current;
                     break;
                 case "3":
-                    this.typeOfRequest = (int)TypeOfRequest.General;
+                    this.typeOfRequest = TypeOfRequest.Forecast;
                     break;
                 default:
                     Console.WriteLine("Invaild Answer");
                     break;
 
             };
+
+            Console.WriteLine("\n");
+
         }
+
+        private void AskFor
 
     }
 }
