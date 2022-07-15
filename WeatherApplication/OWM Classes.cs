@@ -1,6 +1,12 @@
 using System.Collections.Generic;
+using System;
 
-public class CurrentWeather
+public interface IOWM_Weather
+{
+    void PrintWeather();
+}
+
+public class CurrentWeather : IOWM_Weather
 {
     public List<weather> weather {get; set;}
     public main main {get; set;}
@@ -9,11 +15,21 @@ public class CurrentWeather
     public clouds clouds {get; set;}
     public rain rain {get; set;}
     public sys sys {get; set;}
+
+    public void PrintWeather()
+    {
+        Console.WriteLine("Printing Current");
+    }
 }
 
-public class UpTo5DaysWeather
+public class UpTo5DaysWeather : IOWM_Weather
 {
     public List<list> list {get; set;}
+
+    public void PrintWeather()
+    {
+        Console.WriteLine("Printing Forecast");
+    }
 }
 
 public class list
