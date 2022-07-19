@@ -11,13 +11,13 @@ namespace WeatherApplication
 
         private List<WeatherData> list;
 
-        public Table()
+        public GeneralWeather()
         {
             list = new List<WeatherData>();
-            string[] zeilen = File.ReadAllLines(@"General_Weather.csv");
+            string[] zeilen = File.ReadAllLines(@"C:\Users\user\Documents\SWE\Exam-Project-Forecast-Methods\General_Weather.csv");
             foreach(string zeile in zeilen)
             {
-                string[]data = zeile.Split(';');
+                string[]data = zeile.Split(',');
                 string destination = data[0];
                 string season = data[1];
                 int temperature = data[2];
@@ -45,16 +45,13 @@ namespace WeatherApplication
                 string[] data = new string[list.Count];
                 for(int i=0; i< list.Count; i++)
                 {
-                    data[i] = list[i].Destination + ";" + list[i].Season ";" + list[i].Temperature ";" + list[i].Raindays;
+                    data[i] = list[i].Destination + "," + list[i].Season "," + list[i].Temperature "," + list[i].Raindays;
                 }
 
-                File.WriteAllLines(@"General_Weather.csv", data);
+                File.WriteAllLines(@"C:\Users\user\Documents\SWE\Exam-Project-Forecast-Methods\General_Weather.csv", data);
             }
 
         }
-        static void Main(string[] args)
-        {
-
-        }
+    
     }
 } 
