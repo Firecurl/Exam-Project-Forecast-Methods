@@ -14,7 +14,7 @@ namespace WeatherApplication
         public GeneralWeather()
         {
             list = new List<WeatherData>();
-            string[] zeilen = File.ReadAllLines(@"C:\Users\user\Documents\SWE\Exam-Project-Forecast-Methods\General_Weather.csv");
+            string[] zeilen = File.ReadAllLines(@"Helpful_Data/General_Weather.csv");
             foreach(string zeile in zeilen)
             {
                 string[]data = zeile.Split(',');
@@ -48,10 +48,36 @@ namespace WeatherApplication
                     data[i] = list[i].Destination + "," + list[i].Season "," + list[i].Temperature "," + list[i].Raindays;
                 }
 
-                File.WriteAllLines(@"C:\Users\user\Documents\SWE\Exam-Project-Forecast-Methods\General_Weather.csv", data);
+                File.WriteAllLines(@"Helpful_Data/General_Weather.csv", data);
             }
 
         }
-    
+
+    public void output()
+    {
+        // Output of possible places -> user know which places are availabe for genereal weather
+        for (int i=0; i<list.Count; i++)
+        {
+            Console.WriteLine("Availabe places: ", list[i].Destination);
+        }
+
+            // which place?
+
+            Console.WriteLine("For which place do you want to see the general Weather?");
+            string place = Console.ReadLine();
+
+            for (int i=0; i<list.Count; i++)
+            {
+                if(place==list[i].Destination)
+                {
+                    Console.WriteLine("Destination: " + list[i].Destination + "," 
+                                  "Season: " + list[i].Season "," 
+                                  "Temperature: " + list[i].Temperature + "Degree," 
+                                  "Raindays: " + list[i].Raindays);
+                }
+            }
+
+        }
+
     }
 } 
