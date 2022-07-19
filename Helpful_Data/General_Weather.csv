@@ -1,49 +1,49 @@
 Destination, Season, Temperature(degree), Rain(days)
-Australia,Spring, 30, 8
-	, Summer, 21, 4
-	, Autumn, 12, 8
-	, Winter, 18, 10
+Australia, Spring, 30, 8
+Australia, Summer, 21, 4
+Australia, Autumn, 12, 8
+Australia, Winter, 18, 10
 US, Spring, 9, 20
-	, Summer, 20, 21
-	, Autumn, 30, 12
-	, Winter, 20, 11
+US, Summer, 20, 21
+US, Autumn, 30, 12
+US, Winter, 20, 11
 Brasil, Spring, 29, 14
-	, Summer, 27, 4
-	, Autumn, 26, 0
-	, Winter, 28, 22
+Brasil, Summer, 27, 4
+Brasil, Autumn, 26, 0
+Brasil, Winter, 28, 22
 Spain, Spring, 9, 18
-	, Summer, 16, 11
-	, Autumn, 23, 5
-	, Winter, 17, 10
+Spain, Summer, 16, 11
+Spain, Autumn, 23, 5
+Spain, Winter, 17, 10
 Germany, Spring, 5, 2
-	, Summer, 15, 6
-	, Autumn, 23, 5
-	, Winter, 15, 2
+Germany, Summer, 15, 6
+Germany, Autumn, 23, 5
+Germany, Winter, 15, 2
 Great Britain, Spring, 8, 14
-	, Summer, 14, 10
-	, Autumn, 21, 5
-	, Winter, 14, 10
+Great Britain, Summer, 14, 10
+Great Britain, Autumn, 21, 5
+Great Britain, Winter, 14, 10
 Italy, Spring, 13, 17
-	, Summer, 20, 9
-	, Autumn, 30, 4
-	, Winter, 23, 12
+Italy, Summer, 20, 9
+Italy, Autumn, 30, 4
+Italy, Winter, 23, 12
 Vietnam, Spring, 20, 8
-	, Summer, 27, 22
-	, Autumn, 32, 20
-	, Winter, 28, 7
+Vietnam, Summer, 27, 22
+Vietnam, Autumn, 32, 20
+Vietnam, Winter, 28, 7
 Japan, Spring, 10, 12
-	, Summer, 19, 19
-	, Autumn, 28, 16
-	, Winter, 22, 9
-Türkei; Spring, 5, 12
-	, Summer, 16, 14
-	, Autumn, 32, 0
-	, Winter, 20, 4
+Japan, Summer, 19, 19
+Japan, Autumn, 28, 16
+Japan, Winter, 22, 9
+Turky; Spring, 5, 12
+Turky, Summer, 16, 14
+Turky, Autumn, 32, 0
+Turky, Winter, 20, 4
 Egypt, Spring, 18, 6
-	, Summer, 23, 2
-	, Autumn, 31, 0
-	, Winter, 25, 4
+Egypt, Summer, 23, 2
+Egypt, Autumn, 31, 0
+Egypt, Winter, 25, 4
 South Africa, Spring, 28, 16
-	, Summer, 25, 5
-	, Autumn, 18, 2
-	, Winter, 26, 11
+South Africa, Summer, 25, 5
+South Africa, Autumn, 18, 2
+South Africa, Winter, 26, 11
