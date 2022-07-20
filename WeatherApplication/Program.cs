@@ -12,6 +12,7 @@ namespace WeatherApplication
         static void Main(string[] args)
         {
             Console.Clear();
+            Console.Clear();
                         
             TypeOfWeather type = AskForTypeOfWeather();
             
@@ -19,16 +20,17 @@ namespace WeatherApplication
             {
                 case TypeOfWeather.General:
                     //create Instance of GeneralWeather and get Data
+                    GeneralWeather weather = new GeneralWeather();
+                    weather.output();
                     break;
                 case TypeOfWeather.Current:
                 case TypeOfWeather.Forecast:
                     //create Instance of Up25DaysWeather and get Data
                     OMW_WeatherRequest request = new OMW_WeatherRequest("81465b514607845ee21f943fc0f53acd", type);
                     request.SetParameters();
-                    request.BuildUrlString();
-                    Console.WriteLine(request.url);
-                    
+                    request.BuildUrlString();                    
                     var weatherInfo = request.RequestWeather();
+                    Console.Clear();
                     weatherInfo.PrintWeather();
                     break;
             }
@@ -104,7 +106,6 @@ namespace WeatherApplication
             
             while ( json.IndexOf("\"1h\"") > 0 || json.IndexOf("\"3h\"") > 0 )
             {
-                Console.WriteLine("Rain oder Snow erkannt");
                 if ( (index = json.IndexOf("\"1h\"")) > 0 )
                     json = json.Insert(index+1, "_");
                 if ( (index = json.IndexOf("\"3h\"")) > 0 )

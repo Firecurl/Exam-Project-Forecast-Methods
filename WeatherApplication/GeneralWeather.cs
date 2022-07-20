@@ -7,22 +7,22 @@ public class GeneralWeather
 
     // reading data from csv file 
 
-    private List<WeatherData> list;
+    private List<WeatherData> list = new List<WeatherData>();
 
     public GeneralWeather()
-    {
-        list = new List<WeatherData>();
+    {        
         string[] lines = File.ReadAllLines(@"../Helpful_Data/General_Weather.csv");
         string [][] data = new string[lines.Length][];
-        for(int i = 0; i < lines.Length; i++)
+        for(int i = 1; i < lines.Length; i++)
         {
             data[i] = lines[i].Split(',');
-            string destination = data[i][0];
-            string season = data[i][1];
-            int temperature = Int32.Parse(data[i][2]);
-            int rain = Int32.Parse(data[i][3]);
-
-            list.Add(new WeatherData {Destination = destination, Season = season, Temperature = temperature, Rain = rain});
+            
+            string destination = data[i][0].Trim();
+            string season = data[i][1].Trim();
+            int temperature = Int32.Parse(data[i][2].Trim());
+            int rain = Int32.Parse(data[i][3].Trim());
+            
+            list.Add(new WeatherData(destination, season, temperature, rain));
         }
     }
 
@@ -35,7 +35,7 @@ public class GeneralWeather
     // add further destinations
     public void append (string destination, string season, int temperature, int rain)
     {
-        list.Add(new WeatherData {Destination = destination, Season = season, Temperature = temperature, Rain = rain});
+        list.Add(new WeatherData(destination, season, temperature, rain));
     }
 
     // destructor for update the origin file
@@ -52,18 +52,19 @@ public class GeneralWeather
 
     
 
-public void output()
-{
-    // Output of possible places -> user know which places are availabe for genereal weather
-    for (int i=0; i<list.Count; i++)
+    public void output()
     {
-        Console.WriteLine("Availabe places: ", list[i].Destination);
-    }
+        // Output of possible places -> user know which places are availabe for genereal weather
+        for (int i = 0; i < list.Count; i+=4)
+        {
+            Console.WriteLine("Availabe places: ", list[i].Destination);
+        }
 
         // which place?
 
         Console.WriteLine("For which place do you want to see the general Weather?");
         string place = Console.ReadLine();
+        Console.Clear();
 
         for (int i=0; i<list.Count; i++)
         {
