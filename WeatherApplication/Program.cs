@@ -12,23 +12,7 @@ namespace WeatherApplication
         static void Main(string[] args)
         {
             Console.Clear();
-            /*
-
-            UrlStringBuilder urlBuilder = new UrlStringBuilder();
-            
-            string url = "https://api.openweathermap.org/data/2.5/weather?q=Nagpur&appid=81465b514607845ee21f943fc0f53acd&units=metric";
-            
-            HttpClient web = new HttpClient();
-            
-            string json = web.GetStringAsync(url).Result;
-
-            urlBuilder.TestForRain(ref json);
-
-            CurrentWeather currentweather = JsonConvert.DeserializeObject<CurrentWeather>(json);
-            Console.WriteLine(currentweather.rain._1h);
-            Console.WriteLine(json);
-            */
-            
+                        
             TypeOfWeather type = AskForTypeOfWeather();
             
             switch (type)

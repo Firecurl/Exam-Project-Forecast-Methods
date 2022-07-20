@@ -1,17 +1,14 @@
 using System;
 
-namespace WeatherApplication
+public class WeatherData
 {
-    class WeatherData
-    {
-        public string Destination {get; set;}
-        public string Season {get; set;}
-        public int Temperature {get; set;}
-        public int Rain {get; set;}
+    public string Destination {get; set;}
+    public string Season {get; set;}
+    public int Temperature {get; set;}
+    public int Rain {get; set;}
 
-        public override string To.String()
-        {
-            return Destination + "|" + Season + "|" + Temperature + "|" + Raindays; 
-        }
+    public override string ToString()
+    {
+        return Destination + "|" + Season + "|" + Temperature + "|" + Rain; 
     }
 }
