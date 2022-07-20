@@ -4,7 +4,7 @@ using System.Text;
 
 public interface IOWM_Weather
 {
-    void PrintWeather();
+    void PrintWeather(string city, string units);
 }
 
 public static class TimeConverter
@@ -34,14 +34,16 @@ public class CurrentWeather : IOWM_Weather
     public rain rain {get; set;}
     public sys sys {get; set;}
 
-    public void PrintWeather()
+    public void PrintWeather(string city, string units)
     {
-        Console.WriteLine("Printing Current\n");
+        Console.WriteLine($"Printing Weather for {city}");
+        Console.WriteLine( "---------------------{0}", new string('-', city.Length));
+        
         Console.Write(weather[0]);
         Console.Write(main);
         Console.Write(clouds);
         Console.Write(wind);
-        Console.Write($"Visibility : {visibility}\n");
+        Console.Write($"Visibility: \t{visibility}\n");
         
         if (rain != null)
             Console.Write(rain);
@@ -56,7 +58,7 @@ public class UpTo5DaysWeather : IOWM_Weather
 {
     public List<list> list {get; set;}
 
-    public void PrintWeather()
+    public void PrintWeather(string city, string units)
     {
         Console.WriteLine("Printing Forecast\n");
         foreach (var item in list)
@@ -66,7 +68,7 @@ public class UpTo5DaysWeather : IOWM_Weather
             Console.Write(item.main);
             Console.Write(item.clouds);
             Console.Write(item.wind);
-            Console.Write($"Visibility : {item.visibility}\n");
+            Console.Write("Visibility: \t{0}\n", item.visibility);
             
             if (item.rain != null)
                 Console.Write(item.rain);
@@ -95,8 +97,8 @@ public class weather
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Weather: {main}");
-        output.AppendLine($"Description: {description}");
+        output.AppendLine($"Weather: \t{main}");
+        output.AppendLine($"Description: \t{description}");
 
         return output.ToString();
     }
@@ -113,11 +115,11 @@ public class main
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Temperature: {temp}");
-        output.AppendLine($"Feels Like: {feels_like}");
-        output.AppendLine($"Temp. min: {temp_min}");
-        output.AppendLine($"Temp. max: {temp_max}");
-        output.AppendLine($"Humidity: {humidity}%");
+        output.AppendLine($"Temperature: \t{temp}");
+        output.AppendLine($"Feels Like: \t{feels_like}");
+        output.AppendLine($"Temp. min: \t{temp_min}");
+        output.AppendLine($"Temp. max: \t{temp_max}");
+        output.AppendLine($"Humidity: \t{humidity}%");
 
         return output.ToString();
     }
@@ -133,9 +135,9 @@ public class wind
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Wind speed: {speed}");
-        output.AppendLine($"Wind degree: {deg}");
-        output.AppendLine($"Gust speed: {gust}");
+        output.AppendLine($"Wind speed: \t{speed}");
+        output.AppendLine($"Wind degree: \t{deg}");
+        output.AppendLine($"Gust speed: \t{gust}");
 
         return output.ToString();
     }
@@ -151,11 +153,11 @@ public class rain
         StringBuilder output = new StringBuilder();
         if ( _1h != null )
         {
-            output.AppendLine($"Rain last 1h: {_1h}");
+            output.AppendLine($"Rain last 1h: \t{_1h}");
         }
         if ( _3h != null )
         {
-            output.AppendLine($"Rain last 3h: {_3h}");
+            output.AppendLine($"Rain last 3h: \t{_3h}");
         }
         return output.ToString();
     }
@@ -167,7 +169,7 @@ public class clouds
 
     public override string ToString()
     {
-        return $"Cloudiness: {all}%\n";
+        return $"Cloudiness: \t{all}%\n";
     }
 }
 
@@ -179,9 +181,9 @@ public class sys
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.Append("Sunrise: ");
+        output.Append("Sunrise: \t");
         output.AppendLine(TimeConverter.UnixTimestampToDateTime(sunrise).ToString());
-        output.Append("Sunset: ");
+        output.Append("Sunset: \t");
         output.AppendLine(TimeConverter.UnixTimestampToDateTime(sunset).ToString());
 
         return output.ToString();

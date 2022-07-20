@@ -10,11 +10,10 @@ namespace WeatherApplication
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.Clear();
-            Console.Clear();
-                        
+        {   
+            Console.WriteLine("\n\n\n\n");                   
             TypeOfWeather type = AskForTypeOfWeather();
+            Console.Clear();
             
             switch (type)
             {
@@ -31,11 +30,9 @@ namespace WeatherApplication
                     request.BuildUrlString();                    
                     var weatherInfo = request.RequestWeather();
                     Console.Clear();
-                    weatherInfo.PrintWeather();
+                    weatherInfo.PrintWeather(request.city, request.units);
                     break;
-            }
-            
-            
+            }               
         }
 
         static TypeOfWeather AskForTypeOfWeather()
@@ -52,7 +49,6 @@ namespace WeatherApplication
                 Console.Write("Answer: ");
                 input = Console.ReadLine();
                 Console.WriteLine();
-                Console.Clear();
 
                 if ( input.Equals("1") || input.Equals("2") || input.Equals("3") )
                 {
