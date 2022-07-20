@@ -1,5 +1,5 @@
 Destination, Season, Temperature(degree), Rain(days)
-Australia,Spring, 30, 8
+Australia, Spring, 30, 8
 Australia, Summer, 21, 4
 Australia, Autumn, 12, 8
 Australia, Winter, 18, 10
@@ -35,10 +35,10 @@ Japan, Spring, 10, 12
 Japan, Summer, 19, 19
 Japan, Autumn, 28, 16
 Japan, Winter, 22, 9
-Türkiye, Spring, 5, 12
-Türkiye, Summer, 16, 14
-Türkiye, Autumn, 32, 0
-Türkiye, Winter, 20, 4
+Turkey, Spring, 5, 12
+Turkey, Summer, 16, 14
+Turkey, Autumn, 32, 0
+Turkey, Winter, 20, 4
 Egypt, Spring, 18, 6
 Egypt, Summer, 23, 2
 Egypt, Autumn, 31, 0

@@ -1,8 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-public enum TypeOfRequest {General, Current, Forecast}
+public enum TypeOfWeather {General=1, Current=2, Forecast=3}
 
 namespace WeatherApplication
 {
@@ -11,6 +12,7 @@ namespace WeatherApplication
         static void Main(string[] args)
         {
             Console.Clear();
+            /*
 
             UrlStringBuilder urlBuilder = new UrlStringBuilder();
             
@@ -25,20 +27,94 @@ namespace WeatherApplication
             CurrentWeather currentweather = JsonConvert.DeserializeObject<CurrentWeather>(json);
             Console.WriteLine(currentweather.rain._1h);
             Console.WriteLine(json);
-
-            //Console.WriteLine(currentweather.rain._1h);
+            */
             
+            TypeOfWeather type = AskForTypeOfWeather();
+            
+            switch (type)
+            {
+                case TypeOfWeather.General:
+                    //create Instance of GeneralWeather and get Data
+                    break;
+                case TypeOfWeather.Current:
+                case TypeOfWeather.Forecast:
+                    //create Instance of Up25DaysWeather and get Data
+                    OMW_WeatherRequest request = new OMW_WeatherRequest("81465b514607845ee21f943fc0f53acd", type);
+                    request.SetParameters();
+                    request.BuildUrlString();
+                    Console.WriteLine(request.url);
+                    
+                    var weatherInfo = request.RequestWeather();
+                    weatherInfo.PrintWeather();
+                    break;
+            }
+            
+            
+        }
 
+        static TypeOfWeather AskForTypeOfWeather()
+        {
+            string input;            
+            
+            while (true)
+            {
+                Console.WriteLine("Type of weather information:");
+                Console.WriteLine("  1: General weather for a country");
+                Console.WriteLine("  2: Current Weather for a specific City");
+                Console.WriteLine("  3: Forecast for a specific City");
+                Console.WriteLine();
+                Console.Write("Answer: ");
+                input = Console.ReadLine();
+                Console.WriteLine();
+                Console.Clear();
+
+                if ( input.Equals("1") || input.Equals("2") || input.Equals("3") )
+                {
+                    return (TypeOfWeather) Int32.Parse(input);
+                }
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Wrong Answer!");
+                Console.WriteLine("Try again.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine();
+            }
         }
     }
 
-    class UrlStringBuilder
+    class OMW_WeatherRequest
     {
-        public int typeOfRequest {get; set;}        
+        public TypeOfWeather typeOfWeather {get;} 
+        private readonly string appid;       
         public string city {get; set;}
         public string units {get; set;}
+        public string url {get; set;}
 
-        public void TestForRain(ref string json)
+        public OMW_WeatherRequest(string appid, TypeOfWeather type)
+        {
+            this.appid = appid;
+            this.typeOfWeather = type;
+        }
+
+        public IOWM_Weather RequestWeather()
+        {
+            HttpClient web = new HttpClient();
+            string json = web.GetStringAsync(this.url).Result;
+            TestForRain(ref json);
+
+            if ( typeOfWeather == TypeOfWeather.Current )
+            {
+                CurrentWeather weather = JsonConvert.DeserializeObject<CurrentWeather>(json);
+                return weather;
+            }
+            else
+            {
+                UpTo5DaysWeather weather = JsonConvert.DeserializeObject<UpTo5DaysWeather>(json);
+                return weather;
+            }
+        }
+
+        private void TestForRain(ref string json)
         {
             int index;
             
@@ -52,35 +128,57 @@ namespace WeatherApplication
             }
         }
 
-        public void AskForParameters()
+        public void BuildUrlString()
         {
-            Console.WriteLine("Type of weather information:");
-            Console.WriteLine("  1: General weather for a country");
-            Console.WriteLine("  2: Current Weather for a specific City");
-            Console.WriteLine("  3: Forecast for a specific City");
-            Console.WriteLine();
-            Console.WriteLine("Answer: ");
-            string input;
-            
-            input = Console.ReadLine();
+            string url = "https://api.openweathermap.org/data/2.5/";
 
-            switch (input)
+            switch (this.typeOfWeather)
             {
-                case "1":
-                    this.typeOfRequest = (int)TypeOfRequest.General;
+                case TypeOfWeather.Current:
+                    url += "weather?";
                     break;
-                case "2":
-                    this.typeOfRequest = (int)TypeOfRequest.General;
+                case TypeOfWeather.Forecast:
+                    url += "forecast?";
                     break;
-                case "3":
-                    this.typeOfRequest = (int)TypeOfRequest.General;
-                    break;
-                default:
-                    Console.WriteLine("Invaild Answer");
-                    break;
+            }
 
-            };
+            url += "q=" + city + "&";
+            url += "appid=" + appid + "&";
+            url += "units=" + units;
+
+            this.url = url;
         }
 
+        public void SetParameters()
+        {
+            string input;
+            
+            Console.WriteLine("Type in specific city:");
+            Console.WriteLine();
+            Console.Write("Answer: ");
+            input = Console.ReadLine();
+            this.city = input;
+            
+            Console.Clear();
+            
+            Console.WriteLine("Units:");
+            Console.WriteLine("  standard: e.g. Temperature in \"Kelvin\"");
+            Console.WriteLine("  metric:   e.g. Temperature in \"Clesius\"");
+            Console.WriteLine("  imperial: e.g. Temperature in \"Fahrenheit\"");
+            Console.WriteLine();
+            Console.Write("Answer: ");
+            input = Console.ReadLine();
+
+            if (input != "")
+            {
+                this.units = input;
+            }
+            else
+            {
+                this.units = "standard";
+            }            
+            
+            Console.Clear();
+        }
     }
 }
