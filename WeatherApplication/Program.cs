@@ -10,29 +10,49 @@ namespace WeatherApplication
     class Program
     {
         static void Main(string[] args)
-        {   
-            Console.WriteLine("\n\n\n\n");                   
+        {      
+            Console.Clear();     
+
             TypeOfWeather type = AskForTypeOfWeather();
-            Console.Clear();
             
-            switch (type)
+            if ( type == TypeOfWeather.General)
             {
-                case TypeOfWeather.General:
-                    //create Instance of GeneralWeather and get Data
-                    GeneralWeather weather = new GeneralWeather();
-                    weather.output();
-                    break;
-                case TypeOfWeather.Current:
-                case TypeOfWeather.Forecast:
-                    //create Instance of Up25DaysWeather and get Data
-                    OMW_WeatherRequest request = new OMW_WeatherRequest("81465b514607845ee21f943fc0f53acd", type);
-                    request.SetParameters();
-                    request.BuildUrlString();                    
-                    var weatherInfo = request.RequestWeather();
-                    Console.Clear();
-                    weatherInfo.PrintWeather(request.city, request.units);
-                    break;
-            }               
+                //create Instance of GeneralWeather and get Data
+                GeneralWeather weather = new GeneralWeather();
+                Console.Clear();
+                weather.output();
+            }
+            else
+            {
+                //create Instance of Up25DaysWeather and get Data
+                OMW_WeatherRequest request = new OMW_WeatherRequest("81465b514607845ee21f943fc0f53acd", type);
+                request.SetParameters();
+                request.BuildUrlString();                    
+                var weatherInfo = request.RequestWeather();
+
+                double time = 0;
+                if ( type == TypeOfWeather.Current )
+                {
+                    time = TimeConverter.DateTimeToUnixTimestamp(DateTime.Now);
+                }
+                else
+                {
+                    Console.WriteLine("Which day and which time?");
+                    Console.WriteLine("Please type in corret format and in UTC Time!\n");
+                    Console.WriteLine("DD/MM/YYYY HH:MM");
+                    string input = Console.ReadLine();
+                    time = TimeConverter.DateTimeToUnixTimestamp(Convert.ToDateTime(input));
+                }
+                Console.Clear();
+                weatherInfo.PrintWeather(request.city, request.units, time);
+            }
+                    
+                
+                    
+                        
+
+            Console.WriteLine("Press any Key to exit");
+            Console.ReadKey(); 
         }
 
         static TypeOfWeather AskForTypeOfWeather()
@@ -140,7 +160,7 @@ namespace WeatherApplication
             input = Console.ReadLine();
             this.city = input;
             
-            Console.Clear();
+            Console.WriteLine("\n");
             
             Console.WriteLine("Units:");
             Console.WriteLine("  standard: e.g. Temperature in \"Kelvin\"");
@@ -159,7 +179,7 @@ namespace WeatherApplication
                 this.units = "standard";
             }            
             
-            Console.Clear();
+            Console.WriteLine("\n");
         }
     }
 }

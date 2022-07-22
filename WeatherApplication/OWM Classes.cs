@@ -4,7 +4,7 @@ using System.Text;
 
 public interface IOWM_Weather
 {
-    void PrintWeather(string city, string units);
+    void PrintWeather(string city, string units, double time);
 }
 
 public static class TimeConverter
@@ -13,7 +13,7 @@ public static class TimeConverter
     {
         DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
         long unixTimeStampInTicks = (long) (unixTime * TimeSpan.TicksPerSecond);
-        return new DateTime(unixStart.Ticks + unixTimeStampInTicks, DateTimeKind.Utc);
+        return new DateTime(unixStart.Ticks + unixTimeStampInTicks, DateTimeKind.Utc).ToLocalTime();
     } 
 
     public static double DateTimeToUnixTimestamp(DateTime dateTime)
@@ -34,16 +34,17 @@ public class CurrentWeather : IOWM_Weather
     public rain rain {get; set;}
     public sys sys {get; set;}
 
-    public void PrintWeather(string city, string units)
+    public void PrintWeather(string city, string units, double time)
     {
         Console.WriteLine($"Printing Weather for {city}");
-        Console.WriteLine( "---------------------{0}", new string('-', city.Length));
+        Console.WriteLine( "---------------------{0}\n", new string('-', city.Length));
+        Console.WriteLine(TimeConverter.UnixTimestampToDateTime(time));
         
         Console.Write(weather[0]);
-        Console.Write(main);
+        Console.Write(main.ToString(units));
         Console.Write(clouds);
-        Console.Write(wind);
-        Console.Write($"Visibility: \t{visibility}\n");
+        Console.Write(wind.ToString(units));
+        Console.Write($"Visibility: \t{visibility}m\n");
         
         if (rain != null)
             Console.Write(rain);
@@ -58,22 +59,26 @@ public class UpTo5DaysWeather : IOWM_Weather
 {
     public List<list> list {get; set;}
 
-    public void PrintWeather(string city, string units)
+    public void PrintWeather(string city, string units, double time)
     {
-        Console.WriteLine("Printing Forecast\n");
+        Console.WriteLine($"Printing Forecast for {city}");
+        Console.WriteLine( "----------------------{0}\n", new string('-', city.Length));
         foreach (var item in list)
         {
-            Console.WriteLine(TimeConverter.UnixTimestampToDateTime(item.dt));
-            Console.Write(item.weather[0]);
-            Console.Write(item.main);
-            Console.Write(item.clouds);
-            Console.Write(item.wind);
-            Console.Write("Visibility: \t{0}\n", item.visibility);
-            
-            if (item.rain != null)
-                Console.Write(item.rain);
+            if ( (item.dt - time) <= 10800 && (time - item.dt) <= 10800)
+            {
+                Console.WriteLine(TimeConverter.UnixTimestampToDateTime(item.dt));
+                Console.Write(item.weather[0]);
+                Console.Write(item.main.ToString(units));
+                Console.Write(item.clouds);
+                Console.Write(item.wind.ToString(units));
+                Console.Write("Visibility: \t{0}m\n", item.visibility);
+                
+                if (item.rain != null)
+                    Console.Write(item.rain);
 
-            Console.WriteLine();            
+                Console.WriteLine();
+            }          
         }
     }
 }
@@ -86,7 +91,7 @@ public class list
     public clouds clouds {get; set;}
     public wind wind {get; set;}
     public double visibility {get; set;}
-    public rain? rain {get; set;}
+    public rain rain {get; set;}
 }
 
 public class weather
@@ -97,9 +102,8 @@ public class weather
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Weather: \t{main}");
+        output.AppendLine($"Weather: \t{main}");          
         output.AppendLine($"Description: \t{description}");
-
         return output.ToString();
     }
 }
@@ -112,13 +116,26 @@ public class main
     public double temp_max {get; set;}
     public double humidity {get; set;}
 
-    public override string ToString()
+    public string ToString(string units)
     {
+        string temp_unit = "";
+        switch ( units )
+        {
+            case "standard":
+                temp_unit = "K";
+                break;
+            case "metric":
+                temp_unit = "°C";
+                break;
+            case "imperial":
+                temp_unit = "°F";
+                break;
+        }
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Temperature: \t{temp}");
-        output.AppendLine($"Feels Like: \t{feels_like}");
-        output.AppendLine($"Temp. min: \t{temp_min}");
-        output.AppendLine($"Temp. max: \t{temp_max}");
+        output.AppendLine($"Temperature: \t{temp}{temp_unit}");
+        output.AppendLine($"Feels Like: \t{feels_like}{temp_unit}");
+        output.AppendLine($"Temp. min: \t{temp_min}{temp_unit}");
+        output.AppendLine($"Temp. max: \t{temp_max}{temp_unit}");
         output.AppendLine($"Humidity: \t{humidity}%");
 
         return output.ToString();
@@ -132,12 +149,23 @@ public class wind
     public double deg {get; set;}
     public double gust {get; set;}
 
-    public override string ToString()
+    public string ToString(string units)
     {
+        string speed_unit = "";
+        switch ( units )
+        {
+            case "standard":
+            case "metric":
+                speed_unit = "m/s";
+                break;
+            case "imperial":
+                speed_unit = "mi/h";
+                break;
+        }
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Wind speed: \t{speed}");
-        output.AppendLine($"Wind degree: \t{deg}");
-        output.AppendLine($"Gust speed: \t{gust}");
+        output.AppendLine($"Wind speed: \t{speed}{speed_unit}");
+        output.AppendLine($"Wind degree: \t{deg}°");
+        output.AppendLine($"Gust speed: \t{gust}{speed_unit}");
 
         return output.ToString();
     }
@@ -153,11 +181,11 @@ public class rain
         StringBuilder output = new StringBuilder();
         if ( _1h != null )
         {
-            output.AppendLine($"Rain last 1h: \t{_1h}");
+            output.AppendLine($"Rain last 1h: \t{_1h}mm");
         }
         if ( _3h != null )
         {
-            output.AppendLine($"Rain last 3h: \t{_3h}");
+            output.AppendLine($"Rain last 3h: \t{_3h}mm");
         }
         return output.ToString();
     }
