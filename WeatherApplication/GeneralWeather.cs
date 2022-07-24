@@ -2,6 +2,8 @@ using System.IO;
 using System.Collections.Generic;
 using System;
 
+/// <include file='DocuGeneralWeather.xml' path='DocuGeneralWeather/members[@name="GeneralWeather"]/*'/>
+
 public class GeneralWeather
 {
 
@@ -25,18 +27,27 @@ public class GeneralWeather
             list.Add(new WeatherData(destination, season, temperature, rain));
         }
     }
+    
+    
+    /// <include file='DocuGeneralWeather.xml' path='DocuGeneralWeather/members[@name="getAll"]/*'/>
 
     // list in array, only get because should not be able to change something
     public WeatherData[] getAll()
     {
         return list.ToArray();
     }
+    
+    
+    /// <include file='DocuGeneralWeather.xml' path='DocuGeneralWeather/members[@name="append"]/*'/>
 
     // add further destinations
     public void append (string destination, string season, int temperature, int rain)
     {
         list.Add(new WeatherData(destination, season, temperature, rain));
     }
+    
+    
+    /// <include file='DocuGeneralWeather.xml' path='DocuGeneralWeather/members[@name="~GeneralWeather"]/*'/>
 
     // destructor for update the origin file
     ~GeneralWeather()
@@ -51,6 +62,7 @@ public class GeneralWeather
     }
 
     
+    /// <include file='DocuGeneralWeather.xml' path='DocuGeneralWeather/members[@name="Output"]/*'/>
 
     public void output()
     {
