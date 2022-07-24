@@ -1,0 +1,134 @@
+@startuml
+class Program
+{
+
+Main(string[] args) : void
+AskForTypeOfWeather() : TypeOfWeather
+}
+
+enum TypeOfWeather
+{
+General
+Current
+Forecast
+}
+
+class TimeConverter
+{
++UnixTimestampToDateTime(unixTime : double) : DateTime
++DateTimetoUnixTimestamp(dateTime : DateTime) : double
+}
+
+class OWM_WeatherRequest
+{
++typeOfWeather : TypeOfWeather
+-appid : string
++city : string
++units : string
++url : string
++RequestWeather() : IOWM_Weather
+-TestForRain(ref json : string) : void
++BuildUrlString() : void
++SetParamters : void
+}
+
+class CurrentWeather
+{
++weather : List<weather>
++main : main
++visibility : double
++wind : wind
++rain : rain
++clouds : clouds
++sys : sys
++PrintWeather() : void
+}
+
+class UpTo5DaysWeather
+{
++list : List<list>
++PrintWeather() : void
+}
+
+class list
+{
++dt : double
++main : main 
++weather : weather
++clouds : clouds
++wind : wind
++visibility : double
++rain : rain?
+}
+
+class weather
+{
++main : string
++description : string
++ToString() : string
+}
+
+class main
+{
++temp : double
++feels_like : double
++temp_min : double
++temp_max : double
++humidity : double
++ToString() : string
+}
+
+class wind
+{
++speed : double
++deg : double
++gust : double
++ToString() : string
+}
+
+class rain
+{
++_1h : double
++_3h : double
++ToString() : string
+}
+
+class clouds
+{
++all : int
++ToString() : string
+}
+
+class sys
+{
++sunrise : double
++sunrise : sunset
++ToString() : string
+}
+
+OWM_WeatherRequest <-- Program
+OWM_WeatherRequest <-- TypeOfWeather
+
+CurrentWeather <-- weather
+CurrentWeather <-- main
+CurrentWeather <-- wind
+CurrentWeather <-- rain
+CurrentWeather <-- sys
+
+UpTo5DaysWeather <-- TimeConverter
+UpTo5DaysWeather <-- list
+UpTo5DaysWeather <-- sys
+
+list <-- main
+list <-- weather
+list <-- clouds
+list <-- wind
+list <-- rain
+
+class GeneralWeather
+{
+-list : List<WeatherData>
++getInformation(destination : string, season : string) : WeatherData
++getAll() : WeatherData[]
+}
+@enduml
