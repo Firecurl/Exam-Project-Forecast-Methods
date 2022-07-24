@@ -3,15 +3,20 @@ using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json;
 
+/// <include file='DocuProgram.xml' path='DocuProgram/members[@name="Hole File"]/*'/>
+
 public enum TypeOfWeather {General=1, Current=2, Forecast=3}
 
 namespace WeatherApplication
 {
     class Program
     {
+        /// <include file='DocuProgram.xml' path='DocuProgram/members[@name="Main"]/*'/>
         static void Main(string[] args)
         {      
-            Console.Clear();     
+            Console.Clear();    
+            
+            /// <include file='DocuProgram.xml' path='DocuProgram/members[@name="TypeWeather"]/*'/>
 
             TypeOfWeather type = AskForTypeOfWeather();
             
@@ -157,6 +162,8 @@ namespace WeatherApplication
             }
         }
     }
+    
+    /// <include file='DocuProgram.xml' path='DocuProgram/members[@name="OVM"]/*'/>
 
     class OMW_WeatherRequest
     {
