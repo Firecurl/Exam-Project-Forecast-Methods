@@ -4,7 +4,8 @@ using System.Text;
 
 public interface IOWM_Weather
 {
-    void PrintWeather(string city, string units, double time);
+    void PrintWeather(string units, double time);
+
 }
 
 public static class TimeConverter
@@ -33,11 +34,12 @@ public class CurrentWeather : IOWM_Weather
     public clouds clouds {get; set;}
     public rain rain {get; set;}
     public sys sys {get; set;}
+    public string name {get; set;}
 
-    public void PrintWeather(string city, string units, double time)
+    public void PrintWeather(string units, double time)
     {
-        Console.WriteLine($"Printing Weather for {city}");
-        Console.WriteLine( "---------------------{0}\n", new string('-', city.Length));
+        Console.WriteLine($"Printing Weather for {name}");
+        Console.WriteLine( "---------------------{0}\n", new string('-', name.Length));
         Console.WriteLine(TimeConverter.UnixTimestampToDateTime(time));
         
         Console.Write(weather[0]);
@@ -58,11 +60,12 @@ public class CurrentWeather : IOWM_Weather
 public class UpTo5DaysWeather : IOWM_Weather
 {
     public List<list> list {get; set;}
+    public city city {get; set;}
 
-    public void PrintWeather(string city, string units, double time)
+    public void PrintWeather(string units, double time)
     {
-        Console.WriteLine($"Printing Forecast for {city}");
-        Console.WriteLine( "----------------------{0}\n", new string('-', city.Length));
+        Console.WriteLine($"Printing Forecast for {city.name}");
+        Console.WriteLine( "----------------------{0}\n", new string('-', city.name.Length));
         foreach (var item in list)
         {
             if ( (item.dt - time) <= 10800 && (time - item.dt) <= 10800)
@@ -216,4 +219,9 @@ public class sys
 
         return output.ToString();
     }
+}
+
+public class city
+{
+    public string name {get; set;}
 }

@@ -58,45 +58,55 @@ public class GeneralWeather
         Console.WriteLine("Availabe places:");
         for (int i = 0; i < list.Count; i+=4)
         {
-            Console.WriteLine("\t" + list[i].Destination);
+            Console.WriteLine("\t- " + list[i].Destination);
         }
         Console.WriteLine();
 
         // which place?
+        string place;
+        int index;
 
         do
-        Console.WriteLine("For which place do you want to see the general Weather?");
-        string place = Console.ReadLine();
-
-        if ( !IsAvailablePlace(place) )
         {
+            Console.WriteLine("For which place do you want to see the general Weather?");
+            place = Console.ReadLine();
             
-        }
+            index = list.FindIndex(x => x.Destination.ToLower() == place.ToLower());
+            if ( index != -1 )
+                break;
 
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Wrong Answer!");
+            Console.WriteLine("Try again.");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+
+        } while ( true );
+        
+        // Output of weather for chosen place
         Console.Clear();
-        Console.WriteLine("\n\n");
-        Console.WriteLine("General Weather for {0}", place);
-        Console.WriteLine("--------------------{0}\n", new string('-', place.Length));
-
-        for (int i=0; i<list.Count; i++)
+        Console.WriteLine("General Weather for {0}", list[index].Destination);
+        Console.WriteLine("--------------------{0}\n", new string('-', place.Length));       
+        
+        for ( int i = 0; i < 4; i++ )
         {
-            if(place==list[i].Destination)
-            {
-                Console.WriteLine("Destination:\t" + list[i].Destination + "\n" + 
-                                "Season:\t\t" + list[i].Season + "\n" +
-                                "Temperature:\t" + list[i].Temperature + "°C" + "\n" + 
-                                "Raindays:\t" + list[i].Rain);
-                Console.WriteLine();
-            }
+            Console.WriteLine( // "Destination:\t" + list[i].Destination + "\n" + 
+                        "Season:\t\t" + list[index+i].Season + "\n" +
+                        "Temperature:\t" + list[index+i].Temperature + "°C" + "\n" + 
+                        "Raindays:\t" + list[index+i].Rain);
+            Console.WriteLine();
         }
-
     }
 
-    private bool IsAvailablePlace(string place)
+    private bool IsAvailablePlace(string place, out int index)
     {
+        index = 0;
         for (int i = 0; i < list.Count; i+=4)
-            if ( list[i].Destination == place )
+            if ( list[i].Destination.ToLower() == place.ToLower() )
                 return true;
+            else
+                index += 4;
 
         return false;
     }

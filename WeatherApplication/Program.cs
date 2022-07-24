@@ -26,33 +26,107 @@ namespace WeatherApplication
             {
                 //create Instance of Up25DaysWeather and get Data
                 OMW_WeatherRequest request = new OMW_WeatherRequest("81465b514607845ee21f943fc0f53acd", type);
-                request.SetParameters();
-                request.BuildUrlString();                    
-                var weatherInfo = request.RequestWeather();
+                IOWM_Weather weatherInfo = null;
+                
+                // Loop if city and units are wrong
+                // -> can't get a request from OWM API
+                do
+                {
+                    request.SetParameters();
+                    request.BuildUrlString();   
 
+                    
+                    string errorMessage = "";
+                    try
+                    {
+                        weatherInfo = request.RequestWeather();
+                    }
+                    catch (Exception e)
+                    {
+                        errorMessage = e.Message;
+                    }                
+                    
+                    if ( errorMessage == "")
+                    {
+                        break;
+                    }
+
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("City is not correct!");
+                    Console.WriteLine("Try again.");
+                    Console.ResetColor();
+                    Console.WriteLine();
+                } while ( true );
+
+                // If request is current, then just current time is neede
                 double time = 0;
                 if ( type == TypeOfWeather.Current )
                 {
                     time = TimeConverter.DateTimeToUnixTimestamp(DateTime.Now);
                 }
+
+                // If request is forecast, then a specific Time and Day is needed
                 else
                 {
-                    Console.WriteLine("Which day and which time?");
-                    Console.WriteLine("Please type in corret format and in UTC Time!\n");
-                    Console.WriteLine("DD/MM/YYYY HH:MM");
-                    string input = Console.ReadLine();
-                    time = TimeConverter.DateTimeToUnixTimestamp(Convert.ToDateTime(input));
+                    UpTo5DaysWeather upTo5DaysWeather = (UpTo5DaysWeather) weatherInfo;
+                    do
+                    {
+                        string errorMessage = "";
+                        Console.WriteLine();
+                        Console.WriteLine("Which day and which time?");
+                        Console.WriteLine("Please type in corret format!\n");
+                        Console.WriteLine("DD MM YYYY HH:MM");
+                        string input = Console.ReadLine();
+                        
+                        try
+                        {
+                            time = TimeConverter.DateTimeToUnixTimestamp(Convert.ToDateTime(input));
+                        }
+                        catch (FormatException e)
+                        {
+                            errorMessage = e.Message;
+                        }
+
+                        if ( (errorMessage == "") && IsValidTime(time, upTo5DaysWeather) )
+                        {
+                            break;   
+                        }
+
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Time is not in the correct Range or in a wrong format!");
+                        Console.WriteLine("You can only get Weather from {0} to {1}", 
+                                        TimeConverter.UnixTimestampToDateTime(upTo5DaysWeather.list[0].dt), 
+                                        TimeConverter.UnixTimestampToDateTime(upTo5DaysWeather.list[upTo5DaysWeather.list.Count-1].dt));
+                        Console.ResetColor();
+                        Console.WriteLine();
+                    } while ( true );
                 }
                 Console.Clear();
-                weatherInfo.PrintWeather(request.city, request.units, time);
+                Console.WriteLine("\n");
+                weatherInfo.PrintWeather(request.units, time);
             }
-                    
-                
-                    
-                        
-
             Console.WriteLine("Press any Key to exit");
             Console.ReadKey(); 
+        }
+
+        static bool IsValidTime(double time, UpTo5DaysWeather weather)
+        {
+            double now = TimeConverter.DateTimeToUnixTimestamp(DateTime.Now.ToLocalTime());
+
+            if (time < now)
+            {
+                Console.WriteLine("too old");
+                return false;
+            }
+            if ( time > (weather.list[weather.list.Count -1]).dt)
+            {
+                Console.WriteLine("too future");
+                Console.WriteLine(TimeConverter.UnixTimestampToDateTime(weather.list[weather.list.Count -1].dt));
+                return false;
+            }
+            return true;
         }
 
         static TypeOfWeather AskForTypeOfWeather()
@@ -96,12 +170,27 @@ namespace WeatherApplication
         {
             this.appid = appid;
             this.typeOfWeather = type;
+            this.units = "standard";
         }
 
         public IOWM_Weather RequestWeather()
         {
             HttpClient web = new HttpClient();
-            string json = web.GetStringAsync(this.url).Result;
+            string json = "";
+
+            try
+            {
+                json = web.GetStringAsync(this.url).Result;
+            }
+            catch ( HttpRequestException e )
+            {
+                throw new Exception(e.Message);
+            }
+            catch ( AggregateException a )
+            {
+                throw new Exception(a.Message);
+            }
+
             TestForRain(ref json);
 
             if ( typeOfWeather == TypeOfWeather.Current )
@@ -160,7 +249,7 @@ namespace WeatherApplication
             input = Console.ReadLine();
             this.city = input;
             
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             
             Console.WriteLine("Units:");
             Console.WriteLine("  standard: e.g. Temperature in \"Kelvin\"");
@@ -170,16 +259,14 @@ namespace WeatherApplication
             Console.Write("Answer: ");
             input = Console.ReadLine();
 
-            if (input != "")
+            if (input == "metric")
             {
                 this.units = input;
             }
-            else
+            if (input == "imperial")
             {
-                this.units = "standard";
-            }            
-            
-            Console.WriteLine("\n");
+                this.units = input;
+            }    
         }
     }
 }
