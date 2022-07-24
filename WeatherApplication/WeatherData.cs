@@ -1,5 +1,6 @@
 using System;
 
+/// <include file='DocuWeatherData.xml' path='DocuWeatherData/members[@name="WeatherData"]/*'/>
 public class WeatherData
 {
     public string Destination {get; set;}
