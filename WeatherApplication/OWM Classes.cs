@@ -2,11 +2,15 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Interface"]/*'/>
+
 public interface IOWM_Weather
 {
     void PrintWeather(string units, double time);
 
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="TimeConverter"]/*'/>
 
 public static class TimeConverter
 {
@@ -24,6 +28,8 @@ public static class TimeConverter
         return (double) unixTimeStampInTicks / TimeSpan.TicksPerSecond;
     }
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Properties"]/*'/>
 
 public class CurrentWeather : IOWM_Weather
 {
@@ -57,6 +63,8 @@ public class CurrentWeather : IOWM_Weather
     }
 }
 
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="UpTo5Days"]/*'/>
+
 public class UpTo5DaysWeather : IOWM_Weather
 {
     public List<list> list {get; set;}
@@ -86,6 +94,8 @@ public class UpTo5DaysWeather : IOWM_Weather
     }
 }
 
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="List"]/*'/>
+
 public class list
 {
     public double dt {get; set;}
@@ -96,6 +106,8 @@ public class list
     public double visibility {get; set;}
     public rain rain {get; set;}
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Weather"]/*'/>
 
 public class weather
 {
@@ -110,6 +122,8 @@ public class weather
         return output.ToString();
     }
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Main"]/*'/>
 
 public class main
 {
@@ -145,6 +159,8 @@ public class main
     }
     
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Facts"]/*'/>
 
 public class wind
 {
