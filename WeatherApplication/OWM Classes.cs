@@ -2,10 +2,15 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Interface"]/*'/>
+
 public interface IOWM_Weather
 {
-    void PrintWeather();
+    void PrintWeather(string units, double time);
+
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="TimeConverter"]/*'/>
 
 public static class TimeConverter
 {
@@ -13,7 +18,7 @@ public static class TimeConverter
     {
         DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
         long unixTimeStampInTicks = (long) (unixTime * TimeSpan.TicksPerSecond);
-        return new DateTime(unixStart.Ticks + unixTimeStampInTicks, DateTimeKind.Utc);
+        return new DateTime(unixStart.Ticks + unixTimeStampInTicks, DateTimeKind.Utc).ToLocalTime();
     } 
 
     public static double DateTimeToUnixTimestamp(DateTime dateTime)
@@ -24,6 +29,8 @@ public static class TimeConverter
     }
 }
 
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Properties"]/*'/>
+
 public class CurrentWeather : IOWM_Weather
 {
     public List<weather> weather {get; set;}
@@ -33,15 +40,19 @@ public class CurrentWeather : IOWM_Weather
     public clouds clouds {get; set;}
     public rain rain {get; set;}
     public sys sys {get; set;}
+    public string name {get; set;}
 
-    public void PrintWeather()
+    public void PrintWeather(string units, double time)
     {
-        Console.WriteLine("Printing Current\n");
+        Console.WriteLine($"Printing Weather for {name}");
+        Console.WriteLine( "---------------------{0}\n", new string('-', name.Length));
+        Console.WriteLine(TimeConverter.UnixTimestampToDateTime(time));
+        
         Console.Write(weather[0]);
-        Console.Write(main);
+        Console.Write(main.ToString(units));
         Console.Write(clouds);
-        Console.Write(wind);
-        Console.Write($"Visibility : {visibility}\n");
+        Console.Write(wind.ToString(units));
+        Console.Write($"Visibility: \t{visibility}m\n");
         
         if (rain != null)
             Console.Write(rain);
@@ -52,29 +63,38 @@ public class CurrentWeather : IOWM_Weather
     }
 }
 
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="UpTo5Days"]/*'/>
+
 public class UpTo5DaysWeather : IOWM_Weather
 {
     public List<list> list {get; set;}
+    public city city {get; set;}
 
-    public void PrintWeather()
+    public void PrintWeather(string units, double time)
     {
-        Console.WriteLine("Printing Forecast\n");
+        Console.WriteLine($"Printing Forecast for {city.name}");
+        Console.WriteLine( "----------------------{0}\n", new string('-', city.name.Length));
         foreach (var item in list)
         {
-            Console.WriteLine(TimeConverter.UnixTimestampToDateTime(item.dt));
-            Console.Write(item.weather[0]);
-            Console.Write(item.main);
-            Console.Write(item.clouds);
-            Console.Write(item.wind);
-            Console.Write($"Visibility : {item.visibility}\n");
-            
-            if (item.rain != null)
-                Console.Write(item.rain);
+            if ( (item.dt - time) <= 10800 && (time - item.dt) <= 10800)
+            {
+                Console.WriteLine(TimeConverter.UnixTimestampToDateTime(item.dt));
+                Console.Write(item.weather[0]);
+                Console.Write(item.main.ToString(units));
+                Console.Write(item.clouds);
+                Console.Write(item.wind.ToString(units));
+                Console.Write("Visibility: \t{0}m\n", item.visibility);
+                
+                if (item.rain != null)
+                    Console.Write(item.rain);
 
-            Console.WriteLine();            
+                Console.WriteLine();
+            }          
         }
     }
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="List"]/*'/>
 
 public class list
 {
@@ -84,8 +104,10 @@ public class list
     public clouds clouds {get; set;}
     public wind wind {get; set;}
     public double visibility {get; set;}
-    public rain? rain {get; set;}
+    public rain rain {get; set;}
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Weather"]/*'/>
 
 public class weather
 {
@@ -95,12 +117,13 @@ public class weather
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Weather: {main}");
-        output.AppendLine($"Description: {description}");
-
+        output.AppendLine($"Weather: \t{main}");          
+        output.AppendLine($"Description: \t{description}");
         return output.ToString();
     }
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Main"]/*'/>
 
 public class main
 {
@@ -110,19 +133,34 @@ public class main
     public double temp_max {get; set;}
     public double humidity {get; set;}
 
-    public override string ToString()
+    public string ToString(string units)
     {
+        string temp_unit = "";
+        switch ( units )
+        {
+            case "standard":
+                temp_unit = "K";
+                break;
+            case "metric":
+                temp_unit = "°C";
+                break;
+            case "imperial":
+                temp_unit = "°F";
+                break;
+        }
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Temperature: {temp}");
-        output.AppendLine($"Feels Like: {feels_like}");
-        output.AppendLine($"Temp. min: {temp_min}");
-        output.AppendLine($"Temp. max: {temp_max}");
-        output.AppendLine($"Humidity: {humidity}%");
+        output.AppendLine($"Temperature: \t{temp}{temp_unit}");
+        output.AppendLine($"Feels Like: \t{feels_like}{temp_unit}");
+        output.AppendLine($"Temp. min: \t{temp_min}{temp_unit}");
+        output.AppendLine($"Temp. max: \t{temp_max}{temp_unit}");
+        output.AppendLine($"Humidity: \t{humidity}%");
 
         return output.ToString();
     }
     
 }
+
+/// <include file='DocuOVM.xml' path='DocuOVM/members[@name="Facts"]/*'/>
 
 public class wind
 {
@@ -130,12 +168,23 @@ public class wind
     public double deg {get; set;}
     public double gust {get; set;}
 
-    public override string ToString()
+    public string ToString(string units)
     {
+        string speed_unit = "";
+        switch ( units )
+        {
+            case "standard":
+            case "metric":
+                speed_unit = "m/s";
+                break;
+            case "imperial":
+                speed_unit = "mi/h";
+                break;
+        }
         StringBuilder output = new StringBuilder();
-        output.AppendLine($"Wind speed: {speed}");
-        output.AppendLine($"Wind degree: {deg}");
-        output.AppendLine($"Gust speed: {gust}");
+        output.AppendLine($"Wind speed: \t{speed}{speed_unit}");
+        output.AppendLine($"Wind degree: \t{deg}°");
+        output.AppendLine($"Gust speed: \t{gust}{speed_unit}");
 
         return output.ToString();
     }
@@ -151,11 +200,11 @@ public class rain
         StringBuilder output = new StringBuilder();
         if ( _1h != null )
         {
-            output.AppendLine($"Rain last 1h: {_1h}");
+            output.AppendLine($"Rain last 1h: \t{_1h}mm");
         }
         if ( _3h != null )
         {
-            output.AppendLine($"Rain last 3h: {_3h}");
+            output.AppendLine($"Rain last 3h: \t{_3h}mm");
         }
         return output.ToString();
     }
@@ -167,7 +216,7 @@ public class clouds
 
     public override string ToString()
     {
-        return $"Cloudiness: {all}%\n";
+        return $"Cloudiness: \t{all}%\n";
     }
 }
 
@@ -179,11 +228,16 @@ public class sys
     public override string ToString()
     {
         StringBuilder output = new StringBuilder();
-        output.Append("Sunrise: ");
+        output.Append("Sunrise: \t");
         output.AppendLine(TimeConverter.UnixTimestampToDateTime(sunrise).ToString());
-        output.Append("Sunset: ");
+        output.Append("Sunset: \t");
         output.AppendLine(TimeConverter.UnixTimestampToDateTime(sunset).ToString());
 
         return output.ToString();
     }
+}
+
+public class city
+{
+    public string name {get; set;}
 }
