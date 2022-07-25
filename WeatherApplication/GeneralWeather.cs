@@ -110,17 +110,4 @@ public class GeneralWeather
             Console.WriteLine();
         }
     }
-
-    private bool IsAvailablePlace(string place, out int index)
-    {
-        index = 0;
-        for (int i = 0; i < list.Count; i+=4)
-            if ( list[i].Destination.ToLower() == place.ToLower() )
-                return true;
-            else
-                index += 4;
-
-        return false;
-    }
-
 }
