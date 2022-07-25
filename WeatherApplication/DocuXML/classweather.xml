@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classweather" kind="class" language="C#" prot="public">
+    <compoundname>weather</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classweather_1a93a5a073d282e03bc3fbf8df350757b4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string weather.main</definition>
+        <argsstring></argsstring>
+        <name>main</name>
+        <qualifiedname>weather.main</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="114" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="114" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="property" id="classweather_1a1c822c535e02b1d3537f3cbf0d3d9f06" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string weather.description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <qualifiedname>weather.description</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="115" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="115" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classweather_1a08fbf1f2ce1824ebc8395c7eff708c0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string weather.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <qualifiedname>weather.ToString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="117" column="28" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="117" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="112" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="113" bodyend="124"/>
+    <listofallmembers>
+      <member refid="classweather_1a1c822c535e02b1d3537f3cbf0d3d9f06" prot="public" virt="non-virtual"><scope>weather</scope><name>description</name></member>
+      <member refid="classweather_1a93a5a073d282e03bc3fbf8df350757b4" prot="public" virt="non-virtual"><scope>weather</scope><name>main</name></member>
+      <member refid="classweather_1a08fbf1f2ce1824ebc8395c7eff708c0a" prot="public" virt="non-virtual"><scope>weather</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

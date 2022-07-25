@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classmain" kind="class" language="C#" prot="public">
+    <compoundname>main</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classmain_1a12708c2e2f6b43676796cec9664470be" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double main.temp</definition>
+        <argsstring></argsstring>
+        <name>temp</name>
+        <qualifiedname>main.temp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="130" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="property" id="classmain_1a02a876ecd91416b6bc50703c7431d1e0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double main.feels_like</definition>
+        <argsstring></argsstring>
+        <name>feels_like</name>
+        <qualifiedname>main.feels_like</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="131" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="131" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="property" id="classmain_1ad4a78173ea2a0100c1ac44a4dc871c52" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double main.temp_min</definition>
+        <argsstring></argsstring>
+        <name>temp_min</name>
+        <qualifiedname>main.temp_min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="132" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="property" id="classmain_1a4083314c34614b4a0d3a8a1a5609b9bf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double main.temp_max</definition>
+        <argsstring></argsstring>
+        <name>temp_max</name>
+        <qualifiedname>main.temp_max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="133" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="property" id="classmain_1af67383d4c4a6e4bd4a6852497a688afa" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double main.humidity</definition>
+        <argsstring></argsstring>
+        <name>humidity</name>
+        <qualifiedname>main.humidity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="134" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="134" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmain_1a321ebe3f4e655a6eeb336c4abce47516" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string main.ToString</definition>
+        <argsstring>(string units)</argsstring>
+        <name>ToString</name>
+        <qualifiedname>main.ToString</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>units</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="136" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="136" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="128" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="129" bodyend="161"/>
+    <listofallmembers>
+      <member refid="classmain_1a02a876ecd91416b6bc50703c7431d1e0" prot="public" virt="non-virtual"><scope>main</scope><name>feels_like</name></member>
+      <member refid="classmain_1af67383d4c4a6e4bd4a6852497a688afa" prot="public" virt="non-virtual"><scope>main</scope><name>humidity</name></member>
+      <member refid="classmain_1a12708c2e2f6b43676796cec9664470be" prot="public" virt="non-virtual"><scope>main</scope><name>temp</name></member>
+      <member refid="classmain_1a4083314c34614b4a0d3a8a1a5609b9bf" prot="public" virt="non-virtual"><scope>main</scope><name>temp_max</name></member>
+      <member refid="classmain_1ad4a78173ea2a0100c1ac44a4dc871c52" prot="public" virt="non-virtual"><scope>main</scope><name>temp_min</name></member>
+      <member refid="classmain_1a321ebe3f4e655a6eeb336c4abce47516" prot="public" virt="non-virtual"><scope>main</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

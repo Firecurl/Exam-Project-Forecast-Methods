@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="interface_i_o_w_m___weather" kind="interface" language="C#" prot="public">
+    <compoundname>IOWM_Weather</compoundname>
+    <derivedcompoundref refid="class_current_weather" prot="public" virt="non-virtual">CurrentWeather</derivedcompoundref>
+    <derivedcompoundref refid="class_up_to5_days_weather" prot="public" virt="non-virtual">UpTo5DaysWeather</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_i_o_w_m___weather_1a47a4c7a3c78364e0042656e2bac4cda6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IOWM_Weather.PrintWeather</definition>
+        <argsstring>(string units, double time)</argsstring>
+        <name>PrintWeather</name>
+        <qualifiedname>IOWM_Weather.PrintWeather</qualifiedname>
+        <reimplementedby refid="class_current_weather_1ab5a98fc29262f113316d6e4323758c79">PrintWeather</reimplementedby>
+        <reimplementedby refid="class_up_to5_days_weather_1ad4c7b12f0098fb7b706683af4741e854">PrintWeather</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>units</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="9" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>CurrentWeather</label>
+        <link refid="class_current_weather"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>IOWM_Weather</label>
+        <link refid="interface_i_o_w_m___weather"/>
+      </node>
+      <node id="3">
+        <label>UpTo5DaysWeather</label>
+        <link refid="class_up_to5_days_weather"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="7" column="18" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="8" bodyend="11"/>
+    <listofallmembers>
+      <member refid="interface_i_o_w_m___weather_1a47a4c7a3c78364e0042656e2bac4cda6" prot="public" virt="non-virtual"><scope>IOWM_Weather</scope><name>PrintWeather</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

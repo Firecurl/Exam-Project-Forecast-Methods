@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classsys" kind="class" language="C#" prot="public">
+    <compoundname>sys</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classsys_1a9553cda7e8206040fc3b132dc9cbbff5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double sys.sunrise</definition>
+        <argsstring></argsstring>
+        <name>sunrise</name>
+        <qualifiedname>sys.sunrise</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="225" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="225" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="property" id="classsys_1a620b0c6bcb5531ba023aeda6c2e182a6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double sys.sunset</definition>
+        <argsstring></argsstring>
+        <name>sunset</name>
+        <qualifiedname>sys.sunset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="226" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="226" bodyend="226"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsys_1a9146fb145bb408af057fc5cdcc6c757d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string sys.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <qualifiedname>sys.ToString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="228" column="28" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="228" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="223" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="224" bodyend="238"/>
+    <listofallmembers>
+      <member refid="classsys_1a9553cda7e8206040fc3b132dc9cbbff5" prot="public" virt="non-virtual"><scope>sys</scope><name>sunrise</name></member>
+      <member refid="classsys_1a620b0c6bcb5531ba023aeda6c2e182a6" prot="public" virt="non-virtual"><scope>sys</scope><name>sunset</name></member>
+      <member refid="classsys_1a9146fb145bb408af057fc5cdcc6c757d" prot="public" virt="non-virtual"><scope>sys</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

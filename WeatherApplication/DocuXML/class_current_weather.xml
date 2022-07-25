@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="class_current_weather" kind="class" language="C#" prot="public">
+    <compoundname>CurrentWeather</compoundname>
+    <basecompoundref refid="interface_i_o_w_m___weather" prot="public" virt="non-virtual">IOWM_Weather</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_current_weather_1ac3aa71cbb6c9e83f9d28883adff962ba" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>List&lt; <ref refid="classweather" kindref="compound">weather</ref> &gt;</type>
+        <definition>List&lt;weather&gt; CurrentWeather.weather</definition>
+        <argsstring></argsstring>
+        <name>weather</name>
+        <qualifiedname>CurrentWeather.weather</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="36" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1af47b732d9d9d4a7c2cc8d586ace31e5d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classmain" kindref="compound">main</ref></type>
+        <definition>main CurrentWeather.main</definition>
+        <argsstring></argsstring>
+        <name>main</name>
+        <qualifiedname>CurrentWeather.main</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="37" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1ad222a49fe02acd01a16f83d6db0ddb18" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double CurrentWeather.visibility</definition>
+        <argsstring></argsstring>
+        <name>visibility</name>
+        <qualifiedname>CurrentWeather.visibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="38" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1addd099fab265080614d32d0d939158ba" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classwind" kindref="compound">wind</ref></type>
+        <definition>wind CurrentWeather.wind</definition>
+        <argsstring></argsstring>
+        <name>wind</name>
+        <qualifiedname>CurrentWeather.wind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="39" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1ac24f7fe978ddb10ee875d4714893a9e0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classclouds" kindref="compound">clouds</ref></type>
+        <definition>clouds CurrentWeather.clouds</definition>
+        <argsstring></argsstring>
+        <name>clouds</name>
+        <qualifiedname>CurrentWeather.clouds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="40" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1aeb3f91625325de1b6581184d4480f5f2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classrain" kindref="compound">rain</ref></type>
+        <definition>rain CurrentWeather.rain</definition>
+        <argsstring></argsstring>
+        <name>rain</name>
+        <qualifiedname>CurrentWeather.rain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="41" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1a25863f2e7d239ba3584c173c1e08c5b0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classsys" kindref="compound">sys</ref></type>
+        <definition>sys CurrentWeather.sys</definition>
+        <argsstring></argsstring>
+        <name>sys</name>
+        <qualifiedname>CurrentWeather.sys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="42" column="16" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="property" id="class_current_weather_1a3bb2ab297312d260582d945c8b503d61" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string CurrentWeather.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>CurrentWeather.name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="43" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_current_weather_1ab5a98fc29262f113316d6e4323758c79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CurrentWeather.PrintWeather</definition>
+        <argsstring>(string units, double time)</argsstring>
+        <name>PrintWeather</name>
+        <qualifiedname>CurrentWeather.PrintWeather</qualifiedname>
+        <reimplements refid="interface_i_o_w_m___weather_1a47a4c7a3c78364e0042656e2bac4cda6">PrintWeather</reimplements>
+        <param>
+          <type>string</type>
+          <declname>units</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="45" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="45" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>CurrentWeather</label>
+        <link refid="class_current_weather"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IOWM_Weather</label>
+        <link refid="interface_i_o_w_m___weather"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>CurrentWeather</label>
+        <link refid="class_current_weather"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IOWM_Weather</label>
+        <link refid="interface_i_o_w_m___weather"/>
+      </node>
+    </collaborationgraph>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="34" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="35" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_current_weather_1ac24f7fe978ddb10ee875d4714893a9e0" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>clouds</name></member>
+      <member refid="class_current_weather_1af47b732d9d9d4a7c2cc8d586ace31e5d" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>main</name></member>
+      <member refid="class_current_weather_1a3bb2ab297312d260582d945c8b503d61" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>name</name></member>
+      <member refid="class_current_weather_1ab5a98fc29262f113316d6e4323758c79" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>PrintWeather</name></member>
+      <member refid="class_current_weather_1aeb3f91625325de1b6581184d4480f5f2" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>rain</name></member>
+      <member refid="class_current_weather_1a25863f2e7d239ba3584c173c1e08c5b0" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>sys</name></member>
+      <member refid="class_current_weather_1ad222a49fe02acd01a16f83d6db0ddb18" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>visibility</name></member>
+      <member refid="class_current_weather_1ac3aa71cbb6c9e83f9d28883adff962ba" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>weather</name></member>
+      <member refid="class_current_weather_1addd099fab265080614d32d0d939158ba" prot="public" virt="non-virtual"><scope>CurrentWeather</scope><name>wind</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

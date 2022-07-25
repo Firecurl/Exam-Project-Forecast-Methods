@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="_weather_data_8cs" kind="file" language="C#">
+    <compoundname>WeatherData.cs</compoundname>
+    <innerclass refid="class_weather_data" prot="public">WeatherData</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="class_weather_data" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_weather_data" kindref="compound">WeatherData</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1ab6d795bbaa8daa1995ca18e1a3b86d5a" kindref="member">Destination</ref><sp/>{</highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1ad0ee712a4b4f506bdeedcbec3572cd8e" kindref="member">Season</ref><sp/>{</highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1abb069a6a4647c000f6fef235d5f37d38" kindref="member">Temperature</ref><sp/>{</highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1a2aaa582c989c28ea0ba2228aae1a6771" kindref="member">Rain</ref><sp/>{</highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1a6958d0ea471dfba63642c65cf86a529f" kindref="member">WeatherData</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>destination,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>season,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>temperature,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classrain" kindref="compound">rain</ref>)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_weather_data_1ab6d795bbaa8daa1995ca18e1a3b86d5a" kindref="member">Destination</ref><sp/>=<sp/>destination;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_weather_data_1ad0ee712a4b4f506bdeedcbec3572cd8e" kindref="member">Season</ref><sp/>=<sp/>season;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_weather_data_1abb069a6a4647c000f6fef235d5f37d38" kindref="member">Temperature</ref><sp/>=<sp/>temperature;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_weather_data_1a2aaa582c989c28ea0ba2228aae1a6771" kindref="member">Rain</ref><sp/>=<sp/><ref refid="classrain" kindref="compound">rain</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1a73a24a770ed1c21ada78ae6af63a1b17" kindref="member">ToString</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_weather_data_1ab6d795bbaa8daa1995ca18e1a3b86d5a" kindref="member">Destination</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;|&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_weather_data_1ad0ee712a4b4f506bdeedcbec3572cd8e" kindref="member">Season</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;|&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_weather_data_1abb069a6a4647c000f6fef235d5f37d38" kindref="member">Temperature</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;|&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_weather_data_1a2aaa582c989c28ea0ba2228aae1a6771" kindref="member">Rain</ref>;<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs"/>
+  </compounddef>
+</doxygen>
