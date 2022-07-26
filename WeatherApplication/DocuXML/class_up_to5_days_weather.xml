@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="class_up_to5_days_weather" kind="class" language="C#" prot="public">
+    <compoundname>UpTo5DaysWeather</compoundname>
+    <basecompoundref refid="interface_i_o_w_m___weather" prot="public" virt="non-virtual">IOWM_Weather</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_up_to5_days_weather_1ac88ab0d80c49e2d1e5f910bc3fe1a4e3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>List&lt; <ref refid="classlist" kindref="compound">list</ref> &gt;</type>
+        <definition>List&lt;list&gt; UpTo5DaysWeather.list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <qualifiedname>UpTo5DaysWeather.list</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="70" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="property" id="class_up_to5_days_weather_1a6dd3b36207b7f87ab09d62bd2c50c795" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classcity" kindref="compound">city</ref></type>
+        <definition>city UpTo5DaysWeather.city</definition>
+        <argsstring></argsstring>
+        <name>city</name>
+        <qualifiedname>UpTo5DaysWeather.city</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="71" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="71" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_up_to5_days_weather_1ad4c7b12f0098fb7b706683af4741e854" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UpTo5DaysWeather.PrintWeather</definition>
+        <argsstring>(string units, double time)</argsstring>
+        <name>PrintWeather</name>
+        <qualifiedname>UpTo5DaysWeather.PrintWeather</qualifiedname>
+        <reimplements refid="interface_i_o_w_m___weather_1a47a4c7a3c78364e0042656e2bac4cda6">PrintWeather</reimplements>
+        <param>
+          <type>string</type>
+          <declname>units</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="73" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="73" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IOWM_Weather</label>
+        <link refid="interface_i_o_w_m___weather"/>
+      </node>
+      <node id="1">
+        <label>UpTo5DaysWeather</label>
+        <link refid="class_up_to5_days_weather"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IOWM_Weather</label>
+        <link refid="interface_i_o_w_m___weather"/>
+      </node>
+      <node id="1">
+        <label>UpTo5DaysWeather</label>
+        <link refid="class_up_to5_days_weather"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="68" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="69" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_up_to5_days_weather_1a6dd3b36207b7f87ab09d62bd2c50c795" prot="public" virt="non-virtual"><scope>UpTo5DaysWeather</scope><name>city</name></member>
+      <member refid="class_up_to5_days_weather_1ac88ab0d80c49e2d1e5f910bc3fe1a4e3" prot="public" virt="non-virtual"><scope>UpTo5DaysWeather</scope><name>list</name></member>
+      <member refid="class_up_to5_days_weather_1ad4c7b12f0098fb7b706683af4741e854" prot="public" virt="non-virtual"><scope>UpTo5DaysWeather</scope><name>PrintWeather</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

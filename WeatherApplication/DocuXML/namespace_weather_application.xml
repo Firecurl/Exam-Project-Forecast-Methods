@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="namespace_weather_application" kind="namespace" language="C#">
+    <compoundname>WeatherApplication</compoundname>
+    <innerclass refid="class_weather_application_1_1_o_m_w___weather_request" prot="public">WeatherApplication::OMW_WeatherRequest</innerclass>
+    <innerclass refid="class_weather_application_1_1_program" prot="public">WeatherApplication::Program</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/Program.cs" line="10" column="1"/>
+  </compounddef>
+</doxygen>

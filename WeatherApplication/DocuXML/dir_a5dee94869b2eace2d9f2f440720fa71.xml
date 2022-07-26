@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_a5dee94869b2eace2d9f2f440720fa71" kind="dir">
+    <compoundname>Exam-Project-Forecast-Methods/WeatherApplication</compoundname>
+    <innerfile refid="_general_weather_8cs">GeneralWeather.cs</innerfile>
+    <innerfile refid="_o_w_m_01_classes_8cs">OWM Classes.cs</innerfile>
+    <innerfile refid="_program_8cs">Program.cs</innerfile>
+    <innerfile refid="_weather_data_8cs">WeatherData.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/"/>
+  </compounddef>
+</doxygen>

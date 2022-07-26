@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="class_time_converter" kind="class" language="C#" prot="public">
+    <compoundname>TimeConverter</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_time_converter_1a3bfb71e384b66b62c9e1325ab1c2a6c6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DateTime</type>
+        <definition>static DateTime TimeConverter.UnixTimestampToDateTime</definition>
+        <argsstring>(double unixTime)</argsstring>
+        <name>UnixTimestampToDateTime</name>
+        <qualifiedname>TimeConverter.UnixTimestampToDateTime</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>unixTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="17" column="28" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_time_converter_1ad30d5bf89d254ea29ed3f6d1a4f8ca16" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double TimeConverter.DateTimeToUnixTimestamp</definition>
+        <argsstring>(DateTime dateTime)</argsstring>
+        <name>DateTimeToUnixTimestamp</name>
+        <qualifiedname>TimeConverter.DateTimeToUnixTimestamp</qualifiedname>
+        <param>
+          <type>DateTime</type>
+          <declname>dateTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="24" column="26" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="24" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="15" column="15" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="16" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_time_converter_1ad30d5bf89d254ea29ed3f6d1a4f8ca16" prot="public" virt="non-virtual"><scope>TimeConverter</scope><name>DateTimeToUnixTimestamp</name></member>
+      <member refid="class_time_converter_1a3bfb71e384b66b62c9e1325ab1c2a6c6" prot="public" virt="non-virtual"><scope>TimeConverter</scope><name>UnixTimestampToDateTime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

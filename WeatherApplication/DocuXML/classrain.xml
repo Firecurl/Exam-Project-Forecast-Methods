@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classrain" kind="class" language="C#" prot="public">
+    <compoundname>rain</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classrain_1aced6a36a4074580114ffbb49cccbc76a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double?</type>
+        <definition>double? rain._1h</definition>
+        <argsstring></argsstring>
+        <name>_1h</name>
+        <qualifiedname>rain._1h</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="195" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="195" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="property" id="classrain_1a2c5675a6cfe5c05e6046cd5ac47aa893" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double?</type>
+        <definition>double? rain._3h</definition>
+        <argsstring></argsstring>
+        <name>_3h</name>
+        <qualifiedname>rain._3h</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="196" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="196" bodyend="196"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrain_1ad8ef430a48d4bf76e8cc5a38d1ffb365" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string rain.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <qualifiedname>rain.ToString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="198" column="28" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="198" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="193" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="194" bodyend="211"/>
+    <listofallmembers>
+      <member refid="classrain_1aced6a36a4074580114ffbb49cccbc76a" prot="public" virt="non-virtual"><scope>rain</scope><name>_1h</name></member>
+      <member refid="classrain_1a2c5675a6cfe5c05e6046cd5ac47aa893" prot="public" virt="non-virtual"><scope>rain</scope><name>_3h</name></member>
+      <member refid="classrain_1ad8ef430a48d4bf76e8cc5a38d1ffb365" prot="public" virt="non-virtual"><scope>rain</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

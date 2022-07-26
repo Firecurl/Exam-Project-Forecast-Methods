@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="class_general_weather" kind="class" language="C#" prot="public">
+    <compoundname>GeneralWeather</compoundname>
+      <sectiondef kind="user-defined">
+      <header>=&quot;getAll&quot;]/*&apos;/&gt;</header>
+      <description><para>&lt;include file=&apos;DocuGeneralWeather.xml&apos; path=&apos;DocuGeneralWeather/members[ </para>
+</description>
+      <memberdef kind="function" id="class_general_weather_1a657d1673f6cce15efd357e4369174b61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_weather_data" kindref="compound">WeatherData</ref>[]</type>
+        <definition>WeatherData[] GeneralWeather.getAll</definition>
+        <argsstring>()</argsstring>
+        <name>getAll</name>
+        <qualifiedname>GeneralWeather.getAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="35" column="24" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="35" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>=&quot;append&quot;]/*&apos;/&gt;</header>
+      <description><para>&lt;include file=&apos;DocuGeneralWeather.xml&apos; path=&apos;DocuGeneralWeather/members[ </para>
+</description>
+      <memberdef kind="function" id="class_general_weather_1a9466c492d4aac3dcf441501b9bd5e3ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneralWeather.append</definition>
+        <argsstring>(string destination, string season, int temperature, int rain)</argsstring>
+        <name>append</name>
+        <qualifiedname>GeneralWeather.append</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>season</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>temperature</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="44" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>=&quot;Output&quot;]/*&apos;/&gt;</header>
+      <description><para>&lt;include file=&apos;DocuGeneralWeather.xml&apos; path=&apos;DocuGeneralWeather/members[ </para>
+</description>
+      <memberdef kind="function" id="class_general_weather_1af0acec9512d21b61cd0f163017613472" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GeneralWeather.output</definition>
+        <argsstring>()</argsstring>
+        <name>output</name>
+        <qualifiedname>GeneralWeather.output</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="67" column="17" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="67" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_general_weather_1a32a4fd4cb6d502c462ee48a4f6c2f2db" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GeneralWeather.IsAvailablePlace</definition>
+        <argsstring>(string place, out int index)</argsstring>
+        <name>IsAvailablePlace</name>
+        <qualifiedname>GeneralWeather.IsAvailablePlace</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>place</declname>
+        </param>
+        <param>
+          <type>out int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="114" column="18" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="114" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>=&quot;~GeneralWeather&quot;]/*&apos;/&gt;</header>
+      <description><para>&lt;include file=&apos;DocuGeneralWeather.xml&apos; path=&apos;DocuGeneralWeather/members[ </para>
+</description>
+      <memberdef kind="function" id="class_general_weather_1a21ab97116ade51999504532ec6b62e8b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GeneralWeather.~GeneralWeather</definition>
+        <argsstring>()</argsstring>
+        <name>~GeneralWeather</name>
+        <qualifiedname>GeneralWeather.~GeneralWeather</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="53" column="5" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="53" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_general_weather_1ac4e42f53c8375de798ca5879aad79ed7" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_weather_data" kindref="compound">WeatherData</ref> &gt;</type>
+        <definition>List&lt;WeatherData&gt; GeneralWeather.list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <qualifiedname>GeneralWeather.list</qualifiedname>
+        <initializer>= new List&lt;<ref refid="class_weather_data" kindref="compound">WeatherData</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="12" column="18" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_general_weather_1a1812d93fe8e14936d29d701c220efde7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GeneralWeather.GeneralWeather</definition>
+        <argsstring>()</argsstring>
+        <name>GeneralWeather</name>
+        <qualifiedname>GeneralWeather.GeneralWeather</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="14" column="12" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="14" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" line="7" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/GeneralWeather.cs" bodystart="8" bodyend="126"/>
+    <listofallmembers>
+      <member refid="class_general_weather_1a9466c492d4aac3dcf441501b9bd5e3ef" prot="public" virt="non-virtual"><scope>GeneralWeather</scope><name>append</name></member>
+      <member refid="class_general_weather_1a1812d93fe8e14936d29d701c220efde7" prot="public" virt="non-virtual"><scope>GeneralWeather</scope><name>GeneralWeather</name></member>
+      <member refid="class_general_weather_1a657d1673f6cce15efd357e4369174b61" prot="public" virt="non-virtual"><scope>GeneralWeather</scope><name>getAll</name></member>
+      <member refid="class_general_weather_1a32a4fd4cb6d502c462ee48a4f6c2f2db" prot="private" virt="non-virtual"><scope>GeneralWeather</scope><name>IsAvailablePlace</name></member>
+      <member refid="class_general_weather_1ac4e42f53c8375de798ca5879aad79ed7" prot="private" virt="non-virtual"><scope>GeneralWeather</scope><name>list</name></member>
+      <member refid="class_general_weather_1af0acec9512d21b61cd0f163017613472" prot="public" virt="non-virtual"><scope>GeneralWeather</scope><name>output</name></member>
+      <member refid="class_general_weather_1a21ab97116ade51999504532ec6b62e8b" prot="private" virt="non-virtual"><scope>GeneralWeather</scope><name>~GeneralWeather</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

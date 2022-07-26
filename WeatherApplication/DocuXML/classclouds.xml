@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classclouds" kind="class" language="C#" prot="public">
+    <compoundname>clouds</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classclouds_1afc062e345b320397215aef43f15c3449" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int clouds.all</definition>
+        <argsstring></argsstring>
+        <name>all</name>
+        <qualifiedname>clouds.all</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="215" column="16" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="215" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classclouds_1afea4b5bdbc420d9df3daf39d2211cf3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string clouds.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <qualifiedname>clouds.ToString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="217" column="28" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="217" bodyend="220"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="213" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="214" bodyend="221"/>
+    <listofallmembers>
+      <member refid="classclouds_1afc062e345b320397215aef43f15c3449" prot="public" virt="non-virtual"><scope>clouds</scope><name>all</name></member>
+      <member refid="classclouds_1afea4b5bdbc420d9df3daf39d2211cf3a" prot="public" virt="non-virtual"><scope>clouds</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

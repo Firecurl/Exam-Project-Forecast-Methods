@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="class_weather_data" kind="class" language="C#" prot="public">
+    <compoundname>WeatherData</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_weather_data_1ab6d795bbaa8daa1995ca18e1a3b86d5a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string WeatherData.Destination</definition>
+        <argsstring></argsstring>
+        <name>Destination</name>
+        <qualifiedname>WeatherData.Destination</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="6" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="6" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="property" id="class_weather_data_1ad0ee712a4b4f506bdeedcbec3572cd8e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string WeatherData.Season</definition>
+        <argsstring></argsstring>
+        <name>Season</name>
+        <qualifiedname>WeatherData.Season</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="7" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="property" id="class_weather_data_1abb069a6a4647c000f6fef235d5f37d38" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int WeatherData.Temperature</definition>
+        <argsstring></argsstring>
+        <name>Temperature</name>
+        <qualifiedname>WeatherData.Temperature</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="8" column="16" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="property" id="class_weather_data_1a2aaa582c989c28ea0ba2228aae1a6771" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int WeatherData.Rain</definition>
+        <argsstring></argsstring>
+        <name>Rain</name>
+        <qualifiedname>WeatherData.Rain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="9" column="16" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="9" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_weather_data_1a6958d0ea471dfba63642c65cf86a529f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>WeatherData.WeatherData</definition>
+        <argsstring>(string destination, string season, int temperature, int rain)</argsstring>
+        <name>WeatherData</name>
+        <qualifiedname>WeatherData.WeatherData</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>season</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>temperature</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="11" column="12" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="11" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_weather_data_1a73a24a770ed1c21ada78ae6af63a1b17" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string WeatherData.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <qualifiedname>WeatherData.ToString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="19" column="28" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="19" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" line="4" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/WeatherData.cs" bodystart="5" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_weather_data_1ab6d795bbaa8daa1995ca18e1a3b86d5a" prot="public" virt="non-virtual"><scope>WeatherData</scope><name>Destination</name></member>
+      <member refid="class_weather_data_1a2aaa582c989c28ea0ba2228aae1a6771" prot="public" virt="non-virtual"><scope>WeatherData</scope><name>Rain</name></member>
+      <member refid="class_weather_data_1ad0ee712a4b4f506bdeedcbec3572cd8e" prot="public" virt="non-virtual"><scope>WeatherData</scope><name>Season</name></member>
+      <member refid="class_weather_data_1abb069a6a4647c000f6fef235d5f37d38" prot="public" virt="non-virtual"><scope>WeatherData</scope><name>Temperature</name></member>
+      <member refid="class_weather_data_1a73a24a770ed1c21ada78ae6af63a1b17" prot="public" virt="non-virtual"><scope>WeatherData</scope><name>ToString</name></member>
+      <member refid="class_weather_data_1a6958d0ea471dfba63642c65cf86a529f" prot="public" virt="non-virtual"><scope>WeatherData</scope><name>WeatherData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

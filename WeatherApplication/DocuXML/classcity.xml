@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classcity" kind="class" language="C#" prot="public">
+    <compoundname>city</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classcity_1aa1cd23146582d591adb664e7623e9ad6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string city.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>city.name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="242" column="19" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="242" bodyend="242"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" line="240" column="7" bodyfile="Exam-Project-Forecast-Methods/WeatherApplication/OWM Classes.cs" bodystart="241" bodyend="243"/>
+    <listofallmembers>
+      <member refid="classcity_1aa1cd23146582d591adb664e7623e9ad6" prot="public" virt="non-virtual"><scope>city</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
